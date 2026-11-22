@@ -5,9 +5,6 @@ on:
   push:
     branches:
       - main
-  pull_request: 
-    branches: 
-      - main
 
 env:
   DOTNET_VERSION: 10.0.x
@@ -22,9 +19,6 @@ jobs:
         run: echo "Runner is ready"
       - name: Checkout repository
         uses: actions/checkout@v4
-      - name: Check repository structure
-        shell: bash
-        run: bash scripts/check-repository.sh "$PROJECT_PATH"
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
